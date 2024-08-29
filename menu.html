@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif,italic;
+  background-color:#000;
+  color:#000;
+  
+}
+
+.container {
+
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+.container2 {
+  color:#000;
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+h2{
+   color:#fff;
+}
+
+.item {
+  
+  min-width: 200px;
+  height: 300px;
+  margin: 10px;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.container h3,p{
+   color:#000;
+}
+.prev {
+  left:10px;
+  size:20px;
+}
+
+.next {
+  right:10px;
+}
+
+.sk{
+   background-color:#333;
+   border:3px solid #000;
+   padding:10px;
+   font-size:35px;
+   text-align:center;
+}
+button:hover{
+   background-color:green;
+}
+</style>
+    <style>
+.menu-card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-items {
+  padding: 20px;
+}
+
+.menu-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.add-to-cart {
+  background-color:fff;
+  color:darkred;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-items li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-items li:last-child {
+  border-bottom: none;
+}
+
+.cart-items li .delete-btn {
+  background-color:fff;
+  color: blue;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<img src="mn_br2.jpg" alt="" width="100%"></img> <a href="index.html" style="color:#fff; font-size:45;">HOME</a><br><br>
+
+<br><br>
+
+
+<div class="container">
+   <h2>BreakFast<br></h2><br><br>
+   
+   <div class="item">
+       <img src="dosa.jpg" alt="Food Item" width="100%">
+            <h3>Dosa</h3>
+            <p></p>
+            <p>Price: &#x20b9;40</p>
+      <button class="add-to-cart" onclick="addToCart('Dosa', 40, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="idli.jpg" alt="Food Item" width="100%">
+            <h3>Idli</h3>
+            <p></p>
+            <p>Price: &#x20b9;30</p>
+      <button class="add-to-cart" onclick="addToCart('Idli', 30, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="puri.jpg" alt="Food Item" width="100%">
+            <h3>Puri</h3>
+            <p></p>
+            <p>Price: &#x20b9;60</p>
+      <button class="add-to-cart" onclick="addToCart('puri', 60, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="gk_idli.jpg" alt="Food Item" width="100%">
+            <h3>Ghee Karam Idli</h3>
+            <p></p>
+            <p>Price: &#x20b9;40</p>
+      <button class="add-to-cart" onclick="addToCart('Ghee karam idli', 40, 1)">Add to Cart</button>
+   </div>
+
+   
+  <div class="item">
+  <img src="bf_si.jpg" alt="Food Item" width="100%">
+    <h3>sambar idli</h3>
+    <p></p>
+        <p>Price: &#x20b9;50</p>
+    <button class="add-to-cart" onclick="addToCart('sambar idli', 50, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+    <img src="bf_mb.jpg" alt="Food Item" width="100%">
+    <h3>mysure bonda</h3>
+    <p></p>
+   <p>Price: &#x20b9;50</p>
+        <button class="add-to-cart" onclick="addToCart('mysure bonda', 50, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+  <img src="B_dosa.jpg" alt="Food Item" width="100%">
+    <h3>Beetroot Dosa</h3>
+    <p></p>
+       <p>Price: &#x20b9;50</p>
+        <button class="add-to-cart" onclick="addToCart('beetroot Dosa', 50, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+  <img src="bf_ci.jpg" alt="Food Item" width="100%">
+    <h3>chitti idli</h3>
+    <p></p>
+       <p>Price: &#x20b9;35</p>
+        <button class="add-to-cart" onclick="addToCart('chitti idli', 35, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+ <img src="B_v.jpg" alt="Food Item" width="100%">
+    <h3>vada</h3>
+    <p></p>
+       <p>Price: &#x20b9;40</p>
+        <button class="add-to-cart" onclick="addToCart('vada', 40, 1)">Add to Cart</button>
+  </div>
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+<br><br>
+
+<div class="container2">
+   <h2>FAST FOOD</h2>   
+   <div class="item">
+       <img src="n_nd.jpg" alt="Food Item" width="100%">
+            <h3>Chicken Noodles</h3>
+            <p></p>
+            <p>Price: &#x20b9;120</p>
+        <button class="add-to-cart" onclick="addToCart('chicken noodles', 120, 1)">Add to Cart</button>
+   </div>
+   
+   <div class="item">
+       <img src="n_man.jpg" alt="Food Item" width="100%">
+            <h3>Chicken Manchuria</h3>
+            <p></p>
+            <p>Price: <strike>₹199</strike> ₹119</p>
+        <button class="add-to-cart" onclick="addToCart('chicken manchuria', 119, 1)">Add to Cart</button>
+   </div>
+
+   <div class="item">
+       <img src="bg_ff.jpg" alt="Food Item" width="100%" height="60%">
+            <h3>Chicken Burger</h3>
+            <p></p>
+            <p>Price: &#x20b9;129</p>
+        <button class="add-to-cart" onclick="addToCart('chicken burger', 129, 1)">Add to Cart</button>
+   </div>
+   <div class="item"><br>
+       <img src="v_man.jpg" alt="Food Item" width="100%" height="55%"><br>
+            <h3>VEG - Manchuria</h3>
+            <p></p>
+            <p>Price: ₹119</p>
+        <button class="add-to-cart" onclick="addToCart('veg manchuria', 119, 1)">Add to Cart</button>
+   </div>
+
+<div class="item"><br><br>
+       <img src="pz_ff.jpg" alt="Food Item" width="100%"><br>
+            <h3>Pizza</h3>
+            <p></p>
+            <p>Price: ₹149</p>
+        <button class="add-to-cart" onclick="addToCart('pizza', 149, 1)">Add to Cart</button>
+   </div>
+   <div class="item"><br>
+       <img src="sw_ff.jpg" alt="Food Item" width="100%" height="50%"><br>
+            <h3>Sandwidtch</h3>
+            <p></p>
+            <p>Price: ₹119</p>
+        <button class="add-to-cart" onclick="addToCart('sandwidth', 119, 1)">Add to Cart</button>
+   </div>
+  <div class="item"><br>
+       <img src="ff_ff.jpg" alt="Food Item" width="100%" height="50%"><br>
+            <h3>French Fries</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+        <button class="add-to-cart" onclick="addToCart('French Fries', 99, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="v_nd.jpg" alt="Food Item" width="100%" height="60%">
+            <h3>VEG - Noodles</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+        <button class="add-to-cart" onclick="addToCart('veg noodles', 99, 1)">Add to Cart</button>
+   </div>
+   <div class="item"><br>
+       <img src="burrito_ff.jpg" alt="Food Item" width="100%" height="55%"><br>
+            <h3>Burrito (1)</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+        <button class="add-to-cart" onclick="addToCart('Burrito', 99, 1)">Add to Cart</button>
+   </div>
+   <div class="item"><br>
+       <img src="ht_dg.jpg" alt="Food Item" width="100%" height="50%"><br>
+            <h3>Hot Dog</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+        <button class="add-to-cart" onclick="addToCart('Hot dog', 99, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="v_bg.jpg" alt="Food Item" width="100%">
+            <h3>Veg Burger</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+        <button class="add-to-cart" onclick="addToCart('veg burger', 99, 1)">Add to Cart</button>
+        </div>
+   <div class="item">
+       <img src="ff_s.jpg" alt="Food Item" width="100%"><br>
+            <h3>Samosa (6)</h3>
+            <p></p>
+            <p>Price: ₹65</p>
+        <button class="add-to-cart" onclick="addToCart('samosa(6)', 65, 1)">Add to Cart</button>
+   </div>
+
+
+
+</div>
+<button class="prev2">&#10094;</button>
+<button class="next2">&#10095;</button>
+<br><br>
+
+
+<div class="container">
+   <h2>VEG Items</h2>   
+   <div class="item">
+       <img src="v_palav.jpg" alt="Food Item" width="100%">
+            <h3>VEG - PALAV</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+     <button class="add-to-cart" onclick="addToCart('veg palav', 99, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="v_man.jpg" alt="Food Item" width="100%">
+            <h3>VEG - FriedRice</h3>
+            <p></p>
+            <p>Price: ₹99</p>
+        <button class="add-to-cart" onclick="addToCart('veg friedrice', 99, 1)">Add to Cart</button>
+   </div>
+   
+  <div class="item">
+ <img src="Curd_r.jpg" alt="Food Item" width="100%">
+    <h3>curd rice </h3>
+    <p></p>
+                <p>Price: ₹70</p>
+    <button class="add-to-cart" onclick="addToCart('curd rice', 70, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+ <img src="Rice.jpg" alt="Food Item" width="100%">
+    <h3>meals</h3>
+    <p></p>
+                    <p>Price: ₹100</p>
+    <button class="add-to-cart" onclick="addToCart('meals', 100, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+   <img src="T_rice.jpg" alt="Food Item" width="100%">
+    <h3>tomato rice</h3>
+    <p></p>
+       <p>Price: ₹90</p>
+    <button class="add-to-cart" onclick="addToCart('tomato rice', 90, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+   <img src="p_r.jpg" alt="Food Item" width="100%">
+    <h3>panner rice</h3>
+    <p></p>
+      <p>Price: ₹90</p>
+       <button class="add-to-cart" onclick="addToCart('panner rice', 90, 1)">Add to Cart</button>
+  </div>
+</div><br><br>
+<button class="prev2">&#10094;</button>
+<button class="next2">&#10095;</button>
+<br><br>
+
+<br><br>
+<div class="container">
+   <h2>NON-VEG <br>Items</h2>
+  <div class="item">
+       <img src="c_b.jpg" alt="Food Item" width="100%">
+            <h3>chicken biriyani</h3>
+            <p></p>
+            <p>Price: ₹160</p>
+        <button class="add-to-cart" onclick="addToCart('chicken biriyani', 160, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="f_f.jpg" alt="Food Item" width="100%">
+            <h3>fish fry</h3>
+            <p></p>
+            <p>Price: ₹150</p>
+        <button class="add-to-cart" onclick="addToCart('fish fry', 150, 1)">Add to Cart</button>
+   </div>
+
+  
+  <div class="item">
+     <img src="nv_99.jpg" alt="Food Item" width="100%">
+    <h3>chicken roast</h3>
+    <p></p>
+        <p>price: ₹400</p>
+    <button class="add-to-cart" onclick="addToCart('chicken roast', 400, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+   <img src="c_65.jpg" alt="Food Item" width="100%">
+    <h3>chicken 65</h3>
+    <p></p>
+            <p>price: ₹200</p>
+    <button class="add-to-cart" onclick="addToCart('chicken 65', 200, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+<img src="p_f.jpg" alt="Food Item" width="100%">
+    <h3>prawns fry</h3>
+    <p></p>
+                <p>price: ₹200</p>
+    <button class="add-to-cart" onclick="addToCart('prawns fry', 200, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+      <img src="b_c.jpg" alt="Food Item" width="100%">
+    <h3>bamboo chicken</h3>
+    <p></p>
+   <p>price: ₹400</p>
+    <button class="add-to-cart" onclick="addToCart('bamboo chicken', 400, 1)">Add to Cart</button>
+  </div>
+  <div class="item">
+    <img src="m_b.jpg" alt="Food Item" width="100%">
+    <h3>mushroom biriyani</h3>
+    <p></p>
+    <p>price: ₹400</p>
+    <button class="add-to-cart" onclick="addToCart('mushroom biriyani', 400, 1)">Add to Cart</button>
+  </div>
+</div><br><br>
+
+<button class="prev2">&#10094;</button>
+<button class="next2">&#10095;</button>
+<br><br>
+
+
+<div class="container">
+   <h2>Soft Drinks<br></h2>
+   <div class="item">
+       <img src="img/coc.jpg" alt="Food Item" width="100%">
+            <h3>Coca Cola</h3>
+            <p></p>
+            <p>Price: ₹250</p>
+        <button class="add-to-cart" onclick="addToCart('coco cola', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="mz.jpg" alt="Food Item" width="100%" height="65%">
+            <h3>Maza</h3>
+            <p>Price: ₹89</p>
+        <button class="add-to-cart" onclick="addToCart('Maza', 89, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="due.jpg" alt="Food Item" width="100%">
+            <h3>Mountain Dew</h3>
+            <p></p>
+            <p>Price: ₹150</p>
+   <button class="add-to-cart" onclick="addToCart('Mountain Dew', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="due2.jpg" alt="Food Item" width="100%">
+            <h3>Mountain Dew</h3>
+            <p>Price: ₹89</p>
+    <button class="add-to-cart" onclick="addToCart('Mountain Dew', 89, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="pep.jpg" alt="Food Item" width="100%">
+            <h3>Pepsi</h3>
+            <p></p>
+            <p>Price: ₹200</p>
+   <button class="add-to-cart" onclick="addToCart('pepsi', 919, 1)">Add to Cart</button>
+   </div>
+   
+   <div class="item">
+       <img src="th_tin.jpg" alt="Food Item" width="100%">
+            <h3>ThumbsUp</h3>
+            <p></p>
+            <p>Price: ₹100</p>
+        <button class="add-to-cart" onclick="addToCart('Thumbsup', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="coc_tin.jpg" alt="Food Item" width="100%">
+            <h3>Coca Cola Coassic</h3>
+            <p></p>
+            <p>Price: ₹200</p>
+        <button class="add-to-cart" onclick="addToCart('coco cola Coassic', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="sp.jpg" alt="Food Item" width="100%">
+            <h3>Sprite</h3>
+            <p></p>
+            <p>Price: ₹150</p>
+        <button class="add-to-cart" onclick="addToCart('sprite', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="sl.jpg" alt="Food Item" width="100%">
+            <h3>Slice</h3>
+            <p>Price: ₹89</p>
+        <button class="add-to-cart" onclick="addToCart('slice', 89, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="lim2.jpg" alt="Food Item" width="100%">
+            <h3>Limca</h3>
+            <p></p>
+            <p>Price: ₹200</p>
+        <button class="add-to-cart" onclick="addToCart('Limca', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="sp_tn.jpg" alt="Food Item" width="100%">
+            <h3>Sprite</h3>
+            <p></p>
+            <p>Price: ₹270</p>
+        <button class="add-to-cart" onclick="addToCart('sprite', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item"><br>
+       <img src="lim.jpg" alt="Food Item" width="100%" height="55%">
+            <h3>Limca</h3>
+            <p></p>
+            <p>Price: ₹140</p>
+        <button class="add-to-cart" onclick="addToCart('Limca', 919, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="fan.jpg" alt="Food Item" width="100%">
+            <h3>Fanta</h3>
+            <p>Price: ₹89</p>
+        <button class="add-to-cart" onclick="addToCart('Fanta', 89, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="mer.jpg" alt="Food Item" width="100%">
+            <h3>Merunda</h3>
+            <p>Price: ₹89</p>
+        <button class="add-to-cart" onclick="addToCart('merunda', 89, 1)">Add to Cart</button>
+   </div>
+   <div class="item">
+       <img src="kin.jpg" alt="Food Item" width="100%">
+            <h3>Kinley-Soda</h3>
+            <p>Price: ₹89</p>
+        <button class="add-to-cart" onclick="addToCart('kinley-soda', 89, 1)">Add to Cart</button>
+   </div>
+   
+
+</div><br><br>
+<button class="prev2">&#10094;</button>
+<button class="next2">&#10095;</button>
+<br><br>
+<div class="mk">
+<div class="cart-container">
+    <h4></h2><b><big>DIGITAL FOOD HUB</big></b></h4>
+    <ul class="cart-items">
+      <!-- Cart items will be listed here -->
+    </ul>
+    <p id="cart-count">0</p>
+    <p id="subtotal">$0.00</p>
+<a href="pay.html"><button id="Place order" style="width:50%; font-size:25px;">Place order</button></a>
+</div><br><br>
+</div>
+
+<footer>
+   <img src="img/bt_br.jpg" alt="" width="100%"></img>
+</footer>
+<script src="sc.js"></script>
+<script>
+const container = document.querySelector(".container");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let scrollAmount = 200; // Adjust this value for scrolling speed
+
+prevBtn.addEventListener("click", () => {
+  container.scrollLeft -= scrollAmount;
+});
+
+nextBtn.addEventListener("click", () => {
+  container.scrollLeft += scrollAmount;
+});
+</script>
+<script>
+const container2 = document.querySelector(".container2");
+const prevBtn2 = document.querySelector(".prev2");
+const nextBtn2 = document.querySelector(".next2");
+
+let scrollAmount2 = 200; // Adjust this value for scrolling speed
+
+prevBtn2.addEventListener("click", () => {
+  container2.scrollLeft -= scrollAmount;
+});
+
+nextBtn2.addEventListener("click", () => {
+  container2.scrollLeft += scrollAmount;
+});
+function scrollLeft2() {
+  document.querySelector(".container2").scrollLeft -= 200;
+}
+
+function scrollRight2() {
+  document.querySelector(".container2").scrollLeft += 200;
+}
+</script>
+<script>
+function scrollLeft() {
+  document.querySelector(".container").scrollLeft -= 200;
+}
+
+function scrollRight() {
+  document.querySelector(".container").scrollLeft += 200;
+}
+</script>
+<script>
+    let cart = [];
+    function addToCart(itemName, price, quantity) {
+      const item = { name: itemName, price: price, quantity: quantity };
+      cart.push(item);
+      updateCart();
+    }
+    function updateCart() {
+      const cartItems = document.querySelector('.cart-items');
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        const cartItem = document.createElement('li');
+        cartItem.textContent = `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = () => deleteItemFromCart(item.name);
+        cartItem.appendChild(deleteBtn);
+        cartItems.appendChild(cartItem);
+      });
+      const cartCount = document.getElementById('cart-count');
+      cartCount.textContent = cart.length;
+      const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+      const subtotalElement = document.getElementById('subtotal');
+      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    }
+    function deleteItemFromCart(itemName) {
+      const itemIndex = cart.findIndex(item => item.name === itemName);
+      if (itemIndex >= 0) {
+        cart.splice(itemIndex, 1);
+        updateCart();
+      }
+    }
+  </script>
+</body>
+</html>
